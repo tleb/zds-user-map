@@ -1,0 +1,31 @@
+client_id: foo
+client_secret: bar
+
+# the ZdS's bot ID to ignore its messages
+bot_id: 42
+
+# if true, the program runs only once and pulls every topic (even read ones)
+init: false
+
+interval: 60
+
+answerFound: >
+  De ce que j'ai compris, tu habites à
+  [{}](https://www.openstreetmap.org/?mlat={}&mlon={}&zoom=9). Si ce n'est pas
+  le cas, tu peux préciser ton lieu d'habitation en m'envoyant un nouveau
+  message sur ce sujet.
+
+  Je retourne le premier résultat de [la recherche sur
+  OpenStreetMap](http://www.openstreetmap.org/), tu peux donc expérimenter
+  là-bas pour savoir ce que je vais te proposer.
+
+answerNotFound: >
+  Désolé, mais je ne connais pas cet endroit. Tu peux décrire ton lieu
+  d'habitation en m'envoyant un nouveau message sur ce sujet.
+
+  Je retourne le premier résultat de [la recherche sur
+  OpenStreetMap](http://www.openstreetmap.org/), tu peux donc expérimenter
+  là-bas pour savoir ce que je vais te proposer.
+
+# a list of ZdS IDs to ignore
+blacklist: []
