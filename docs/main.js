@@ -20,12 +20,12 @@ function getMarkersData(cb) {
   httpReq.addEventListener('load', function() {
     cb(JSON.parse(this.responseText))
   })
-  httpReq.open('GET', 'https://tleb.github.io/zds-user-map/data.json', false)
+  httpReq.open('GET', 'https://tleb.github.io/zds-user-map/markers.json', false)
   httpReq.send()
 }
 
 getMarkersData(function(markers) {
   var cluster = L.markerClusterGroup()
-  cluster.addLayers(markers.map(u => userMarker(u.latlng, u.username, u.urlPath)))
+  cluster.addLayers(markers.map(m => userMarker(m.latlng, m.username, m.urlPath)))
   map.addLayer(cluster)
 })
