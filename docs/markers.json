@@ -91,8 +91,8 @@
     "username": "yoyojoss90",
     "uri": "https://zestedesavoir.com/membres/voir/yoyojoss90/",
     "latlng": [
-      "47.6155353",
-      "0.8211824"
+      "46.606022",
+      "6.2314896"
     ]
   },
   {
@@ -589,6 +589,30 @@
     "latlng": [
       "38.60422445",
       "112.979469237983"
+    ]
+  },
+  {
+    "username": "KimJong",
+    "uri": "https://zestedesavoir.com/membres/voir/KimJong/",
+    "latlng": [
+      "38.75266085",
+      "125.635181253458"
+    ]
+  },
+  {
+    "username": "Roipoussiere",
+    "uri": "https://zestedesavoir.com/membres/voir/Roipoussiere/",
+    "latlng": [
+      "43.6044622",
+      "1.4442469"
+    ]
+  },
+  {
+    "username": "PixarFilmz",
+    "uri": "https://zestedesavoir.com/membres/voir/PixarFilmz/",
+    "latlng": [
+      "46.8259601",
+      "-71.2352226"
     ]
   }
 ]
