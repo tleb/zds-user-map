@@ -315,8 +315,8 @@
     "username": "ToxicScorpius",
     "uri": "https://zestedesavoir.com/membres/voir/ToxicScorpius/",
     "latlng": [
-      "36.775348",
-      "3.060065"
+      "13.4143461",
+      "-1.773635"
     ]
   },
   {
@@ -613,6 +613,22 @@
     "latlng": [
       "46.8259601",
       "-71.2352226"
+    ]
+  },
+  {
+    "username": "Cithoran",
+    "uri": "https://zestedesavoir.com/membres/voir/Cithoran/",
+    "latlng": [
+      "45.4810426",
+      "-75.50996"
+    ]
+  },
+  {
+    "username": "Alix_Speroza",
+    "uri": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
+    "latlng": [
+      "49.1426376",
+      "2.2863808"
     ]
   }
 ]
