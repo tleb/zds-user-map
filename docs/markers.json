@@ -667,8 +667,8 @@
     "username": "Gnash",
     "uri": "https://zestedesavoir.com/membres/voir/Gnash/",
     "latlng": [
-      "12.10456785",
-      "15.0739025126348"
+      "53.5639321",
+      "-1.7636716"
     ]
   },
   {
@@ -709,6 +709,14 @@
     "latlng": [
       "48.8684897",
       "2.3095267"
+    ]
+  },
+  {
+    "username": "cast1163",
+    "uri": "https://zestedesavoir.com/membres/voir/cast1163/",
+    "latlng": [
+      "45.7774551",
+      "3.0819427"
     ]
   }
 ]
