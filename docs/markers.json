@@ -675,8 +675,8 @@
     "username": "A-312",
     "uri": "https://zestedesavoir.com/membres/voir/A-312/",
     "latlng": [
-      "43.5194457",
-      "7.04931754974466"
+      "43.6594505",
+      "7.21321629910079"
     ]
   },
   {
@@ -733,6 +733,14 @@
     "latlng": [
       "47.2186371",
       "-1.5541362"
+    ]
+  },
+  {
+    "username": "amael",
+    "uri": "https://zestedesavoir.com/membres/voir/amael/",
+    "latlng": [
+      "48.451729",
+      "-4.465365"
     ]
   }
 ]
