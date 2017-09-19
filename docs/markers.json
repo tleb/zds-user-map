@@ -742,5 +742,37 @@
       "48.451729",
       "-4.465365"
     ]
+  },
+  {
+    "username": "Eragon",
+    "uri": "https://zestedesavoir.com/membres/voir/Eragon/",
+    "latlng": [
+      "47.8224257",
+      "-4.2291858"
+    ]
+  },
+  {
+    "username": "J\u00e9r\u00f4me Deuchnord",
+    "uri": "https://zestedesavoir.com/membres/voir/J%C3%A9r%C3%B4me%20Deuchnord/",
+    "latlng": [
+      "50.6305089",
+      "3.0706414"
+    ]
+  },
+  {
+    "username": "Maluna34",
+    "uri": "https://zestedesavoir.com/membres/voir/Maluna34/",
+    "latlng": [
+      "43.6112422",
+      "3.8767337"
+    ]
+  },
+  {
+    "username": "azeupaul",
+    "uri": "https://zestedesavoir.com/membres/voir/azeupaul/",
+    "latlng": [
+      "4.0537386",
+      "9.6644365792336"
+    ]
   }
 ]
