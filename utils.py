@@ -31,5 +31,6 @@ def list_markers(store, base_uri):
 
 
 def save_markers(path, markers):
+    markers.sort(key=lambda x: x['username'].lower())
     with open(path, 'w', encoding='UTF-8') as f:
-        json.dump(markers, f, indent=2)
+        json.dump(markers, f, indent=2, sort_keys=True)
