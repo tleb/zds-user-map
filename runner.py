@@ -23,7 +23,7 @@ class Runner:
             return yaml.load(f)
 
     def run(self):
-        for True:
+        while True:
             self.run_once()
 
             if self.config['init']:
