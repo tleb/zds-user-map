@@ -23,11 +23,13 @@ class Runner:
             return yaml.load(f)
 
     def run(self):
-        self.run_once()
+        for True:
+            self.run_once()
 
-        if not self.config['init']:
+            if self.config['init']:
+                break
+
             time.sleep(self.config['interval'])
-            self.run()
 
     def run_once(self):
         print('started running')
