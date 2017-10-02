@@ -28,4 +28,12 @@ getMarkersData(function(markers) {
   var cluster = L.markerClusterGroup()
   cluster.addLayers(markers.map(m => userMarker(m.latlng, m.username, m.uri)))
   map.addLayer(cluster)
+
+  map.addControl(new L.Control.Search({
+    position: 'topright',
+    layer: cluster,
+    initial: false,
+    zoom: 12,
+    marker: false,
+  }))
 })
