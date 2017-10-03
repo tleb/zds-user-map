@@ -289,8 +289,8 @@
   },
   {
     "latlng": [
-      "48.584614",
-      "7.7507127"
+      "48.5580427",
+      "7.6836346"
     ],
     "uri": "https://zestedesavoir.com/membres/voir/Golden%20Panda/",
     "username": "Golden Panda"
@@ -558,6 +558,14 @@
     ],
     "uri": "https://zestedesavoir.com/membres/voir/Pinc%C3%A9e%20d%27air/",
     "username": "Pinc\u00e9e d'air"
+  },
+  {
+    "latlng": [
+      "48.584614",
+      "7.7507127"
+    ],
+    "uri": "https://zestedesavoir.com/membres/voir/Piwit/",
+    "username": "Piwit"
   },
   {
     "latlng": [
