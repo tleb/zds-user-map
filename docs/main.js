@@ -1,7 +1,6 @@
 var map = L.map('map', {
   center:  [35.317, -0.527],
   zoom:    3,
-  maxZoom: 12,
 })
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
