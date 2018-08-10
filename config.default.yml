@@ -29,3 +29,12 @@ answerNotFound: >
 
 # a list of ZdS IDs to ignore
 blacklist: []
+
+# message to ask for a deletion
+deletion_msg: '!supprimer'
+
+answerDeletion: >
+  J'ai bien effectué ta demande de suppression. Si tu souhaites faire un retour
+  à mon créateur (#balancetoncréateur), tu peux [le contacter
+  facilement](https://zestedesavoir.com/membres/voir/tleb/). N'hésite pas à
+  aller lui expliquer les raisons de ton départ.

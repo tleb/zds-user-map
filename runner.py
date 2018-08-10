@@ -51,18 +51,20 @@ class Runner:
         if msg_author in self.config['blacklist']:
             return
 
-        pos = utils.get_pos(msg_text)
-
-        if pos:
-            answer = self.config['answerFound'].format(pos['display_name'], pos['lat'], pos['lon'])
+        if msg_text.strip() == self.config['deletion_msg']:
+            self._delete(msg_author)
+            answer = self.config['answerDeletion']
         else:
-            answer = self.config['answerNotFound']
+            pos = utils.get_pos(msg_text)
+
+            if pos:
+                self._record(msg_author, [pos['lat'], pos['lon']])
+                answer = self.config['answerFound'].format(pos['display_name'], pos['lat'], pos['lon'])
+            else:
+                answer = self.config['answerNotFound']
 
         self.zds.send_message(topic_id, answer)
         print('answer sent')
-
-        if pos:
-            self._record(msg_author, [pos['lat'], pos['lon']])
 
     def _record(self, user_id, latlng):
         self.store['user.{}'.format(user_id)] = latlng
@@ -73,3 +75,6 @@ class Runner:
                 'uri': user['html_url'],
                 'username': user['username']
             }
+
+    def _delete(self, user_id):
+        self.store.delete(('user.{}'.format(user_id), 'userData.{}'.format(user_id)))

@@ -27,5 +27,14 @@ class Store:
     def __contains__(self, key):
         return key in self.data
 
+    def delete(self, key):
+        if isinstance(key, str):
+            del self.data[k]
+        else:
+            for k in key:
+                del self.data[k]
+
+        self._save(self.data)
+
     def loop(self):
         yield from self.data.items()
