@@ -7,11 +7,11 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map)
 
-function userMarker(latlng, username, uri) {
-  return L.marker(latlng, {
-    title: username,
-    alt:   username,
-  }).bindPopup(`<a href="${uri}" class="popup-link">${username}</a>`)
+function userMarker(m) {
+  return L.marker([m.lat, m.lon], {
+    title: m.username,
+    alt:   m.username,
+  }).bindPopup(`<a href="${m.url}" class="popup-link">${m.username}</a>`)
 }
 
 function getMarkersData(cb) {
@@ -25,7 +25,7 @@ function getMarkersData(cb) {
 
 getMarkersData(function(markers) {
   const cluster = L.markerClusterGroup()
-  cluster.addLayers(markers.map(m => userMarker(m.latlng, m.username, m.uri)))
+  cluster.addLayers(markers.map(userMarker))
   map.addLayer(cluster)
 
   const controlSearch = new L.Control.Search({

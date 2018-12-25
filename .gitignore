@@ -3,3 +3,4 @@ __pycache__/
 store.json
 config.yml
 logbot.log
+refresh_token.txt

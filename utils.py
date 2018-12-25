@@ -16,21 +16,16 @@ def get_pos(query):
     return data[0] if data else None
 
 
-def list_markers(store, base_uri):
-    for user_id, latlng in store.loop():
-        if user_id.startswith('user.'):
-            # len('user.') == 5
-            user_id = user_id[5:]
-            user = store['userData.' + user_id]
+def last_text_position(msgs, bot_id, deletion_msg):
+        last_position = None
 
-            yield {
-                'username': user['username'],
-                'uri': base_uri + user['uri'],
-                'latlng': latlng,
-            }
+        for msg in msgs:
+            if msg['author'] == bot_id:
+                continue
 
+            if msg['text'] == deletion_msg:
+                last_position = None
 
-def save_markers(path, markers):
-    markers.sort(key=lambda x: x['username'].lower())
-    with open(path, 'w', encoding='UTF-8') as f:
-        json.dump(markers, f, indent=2, sort_keys=True)
+            last_position = msg['text']
+
+        return last_position
