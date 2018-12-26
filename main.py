@@ -49,11 +49,9 @@ def main(mode):
         markers = {m['id']: m for m in markers if m is not None}
 
         utils.save_markers(MARKERS_PATH, markers)
+        utils.git_send_markers(MARKERS_PATH)
 
     if mode == 2:
-        topics = list(zds.topics(True))
-        topics.reverse()
-
         markers = {m['id']: m for m in utils.retrieve_markers(MARKERS_PATH)}
 
         while True:
@@ -64,40 +62,17 @@ def main(mode):
             for topic in topics:
                 msg = list(zds.messages(topic['id']))[-1]
 
-                if msg['author'] in config['blacklist']:
-                    continue
-                if msg['author'] == config['bot_id']:
-                    continue
+                change, msg = utils.on_new_message(msg, config, markers, zds, osm_ti)
 
-                # delete the marker
-                if msg['text'] == config['deletion_msg']:
+                if change:
                     has_changed = True
-                    del markers[msg['author']]
-                    zds.send_message(topic['id'], config['answerDeletion'])
-                    continue
 
-                osm_ti.start()
-                pos = utils.get_pos(msg['text'])
-                if pos is None:
-                    zds.send_message(topic['id'], config['answerNotFound'])
-                else:
-                    has_changed = True
-                    user_id = msg['author']
-                    user = zds.get_user(user_id)
-
-                    markers[user_id] = utils.new_marker(
-                        user_id,
-                        user['username'],
-                        ZesteDeSavoir.URI_BASE + user['html_url'],
-                        pos['lat'],
-                        pos['lon'])
-
-                    zds.send_message(
-                        topic['id'],
-                        config['answerFound'].format(pos['display_name'], pos['lat'], pos['lon']))
+                if msg is not None:
+                    zds.send_message(topic['id'], msg)
 
             if has_changed:
                 utils.save_markers(MARKERS_PATH, markers)
+                utils.git_send_markers(MARKERS_PATH)
 
             time.sleep(config['interval'])
 

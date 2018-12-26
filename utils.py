@@ -3,6 +3,7 @@ import requests
 import urllib.parse
 from collections import OrderedDict
 from zeste_de_savoir import ZesteDeSavoir
+import subprocess
 
 
 OSM_SEARCH = 'http://nominatim.openstreetmap.org/search?format=json&q={}'
@@ -41,6 +42,7 @@ def last_text_position(msgs, bot_id, deletion_msg):
 
         return last_position
 
+
 def marker_from_topic(topic, zds, config, osm_ti):
     msgs = list(zds.messages(topic['id']))
     msgs.reverse()
@@ -50,10 +52,8 @@ def marker_from_topic(topic, zds, config, osm_ti):
     for msg in msgs:
         if msg['author'] in config['blacklist']:
             return None
-
         if msg['author'] == config['bot_id']:
             continue
-
         if msg['text'] == config['deletion_msg']:
             break
 
@@ -75,6 +75,41 @@ def marker_from_topic(topic, zds, config, osm_ti):
         pos['lon'])
 
 
+# returns (bool, str or None)
+# first is true if markers has been changed
+# second is an optional message to send
+def on_new_message(msg, config, markers, zds, osm_ti):
+    if msg['author'] in config['blacklist']:
+        return (False, None)
+    if msg['author'] == config['bot_id']:
+        return (False, None)
+
+    # delete the marker
+    if msg['text'] == config['deletion_msg']:
+        try:
+            del markers[msg['author']]
+            return (True, config['answerDeletion'])
+        except KeyError:
+            return (False, config['answerDeletion'])
+
+    osm_ti.start()
+    pos = get_pos(msg['text'])
+    if pos is None:
+        return (False, config['answerNotFound'])
+
+    user_id = msg['author']
+    user = zds.get_user(user_id)
+
+    markers[user_id] = new_marker(
+        user_id,
+        user['username'],
+        ZesteDeSavoir.URI_BASE + user['html_url'],
+        pos['lat'],
+        pos['lon'])
+
+    return (True, config['answerFound'].format(pos['display_name'], pos['lat'], pos['lon']))
+
+
 def retrieve_markers(path):
     try:
         with open(path, 'r', encoding='UTF-8') as f:
@@ -89,3 +124,12 @@ def save_markers(path, markers):
 
     with open(path, 'w', encoding='UTF-8') as f:
         json.dump(data, f, indent=2)
+
+
+def git_send_markers(markers_path):
+    print('git add {}'.format(markers_path))
+    subprocess.call(['git', 'add', markers_path])
+    print('git commit -m "[bot] save markers"')
+    subprocess.call(['git', 'commit', '-m', '[bot] save markers'])
+    print('git push origin master')
+    subprocess.call(['git', 'push', 'origin', 'master'])
