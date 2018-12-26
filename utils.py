@@ -8,6 +8,15 @@ from zeste_de_savoir import ZesteDeSavoir
 OSM_SEARCH = 'http://nominatim.openstreetmap.org/search?format=json&q={}'
 
 
+def new_marker(id, username, url, lat, lon):
+    return OrderedDict([
+        ('id', id),
+        ('username', username),
+        ('url', url),
+        ('lat', lat),
+        ('lon', lon)])
+
+
 def get_pos(query):
     res = requests.get(
         OSM_SEARCH.format(urllib.parse.quote(query)))
@@ -39,6 +48,9 @@ def marker_from_topic(topic, zds, config, osm_ti):
     pos, user_id = None, None
 
     for msg in msgs:
+        if msg['author'] in config['blacklist']:
+            return None
+
         if msg['author'] == config['bot_id']:
             continue
 
@@ -55,9 +67,25 @@ def marker_from_topic(topic, zds, config, osm_ti):
         return None
 
     user = zds.get_user(user_id)
-    return OrderedDict([
-        ('id', user_id),
-        ('username', user['username']),
-        ('url', ZesteDeSavoir.URI_BASE + user['html_url']),
-        ('lat', pos['lat']),
-        ('lon', pos['lon'])])
+    return new_marker(
+        user_id,
+        user['username'],
+        ZesteDeSavoir.URI_BASE + user['html_url'],
+        pos['lat'],
+        pos['lon'])
+
+
+def retrieve_markers(path):
+    try:
+        with open(path, 'r', encoding='UTF-8') as f:
+            return [new_marker(**m) for m in json.load(f)]
+    except (FileNotFoundError, json.decoder.JSONDecodeError):
+        return []
+
+
+def save_markers(path, markers):
+    data = list(markers.values())
+    data.sort(key=lambda m: m['id'])
+
+    with open(path, 'w', encoding='UTF-8') as f:
+        json.dump(data, f, indent=2)

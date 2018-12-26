@@ -74,7 +74,7 @@ class ZesteDeSavoir:
             raise RuntimeError('missing refresh token, please use mode 0 to initialise it')
 
         self.time_interval.start()
-        print('refreshing tokens')
+        print('POST {}'.format(self.URI_TOKEN))
         res = requests.post(self.URI_BASE + self.URI_TOKEN, json={
             'grant_type': 'refresh_token',
             'client_id': self.client_id,
@@ -87,11 +87,9 @@ class ZesteDeSavoir:
         self._refresh_token = res['refresh_token']
         self._save_refresh_token()
 
-        print('refreshed tokens')
-
     def _refresh_token_from_logins(self, username, password):
         self.time_interval.start()
-        print('refreshing tokens')
+        print('POST {}'.format(self.URI_TOKEN))
         res = requests.post(self.URI_BASE + self.URI_TOKEN, json={
             'grant_type': 'password',
             'client_id': self.client_id,
@@ -102,8 +100,6 @@ class ZesteDeSavoir:
 
         self._refresh_token = res['refresh_token']
         self._save_refresh_token()
-
-        print('refreshed tokens')
 
     def _retrieve_refresh_token(self):
         try:

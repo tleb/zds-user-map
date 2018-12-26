@@ -27,8 +27,9 @@ answerNotFound: >
   OpenStreetMap](http://www.openstreetmap.org/), tu peux donc expérimenter
   là-bas pour savoir ce que je vais te proposer.
 
-# a list of ZdS IDs to ignore
-blacklist: []
+# a list of ZdS IDs to ignore, includes "anonyme" by default
+# https://zestedesavoir.com/membres/voir/anonyme/
+blacklist: [958]
 
 # message to ask for a deletion
 deletion_msg: '!supprimer'

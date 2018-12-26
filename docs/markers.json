@@ -59,8 +59,8 @@
     "id": 169,
     "username": "tleb",
     "url": "https://zestedesavoir.com/membres/voir/tleb/",
-    "lat": "47.6379599",
-    "lon": "6.8628942"
+    "lat": "43.6044622",
+    "lon": "1.4442469"
   },
   {
     "id": 227,
@@ -185,20 +185,6 @@
     "id": 506,
     "username": "Phigger",
     "url": "https://zestedesavoir.com/membres/voir/Phigger/",
-    "lat": "48.8566101",
-    "lon": "2.3514992"
-  },
-  {
-    "id": 506,
-    "username": "Phigger",
-    "url": "https://zestedesavoir.com/membres/voir/Phigger/",
-    "lat": "43.8374249",
-    "lon": "4.3600687"
-  },
-  {
-    "id": 506,
-    "username": "Phigger",
-    "url": "https://zestedesavoir.com/membres/voir/Phigger/",
     "lat": "43.8374249",
     "lon": "4.3600687"
   },
@@ -222,13 +208,6 @@
     "url": "https://zestedesavoir.com/membres/voir/3D_Aurel/",
     "lat": "48.0073498",
     "lon": "0.1967379"
-  },
-  {
-    "id": 542,
-    "username": "Gabbro",
-    "url": "https://zestedesavoir.com/membres/voir/Gabbro/",
-    "lat": "45.1875602",
-    "lon": "5.7357819"
   },
   {
     "id": 542,
@@ -355,41 +334,6 @@
     "url": "https://zestedesavoir.com/membres/voir/Lalla/",
     "lat": "48.1113387",
     "lon": "-1.6800198"
-  },
-  {
-    "id": 958,
-    "username": "anonyme",
-    "url": "https://zestedesavoir.com/membres/voir/anonyme/",
-    "lat": "4.0537386",
-    "lon": "9.6644365792336"
-  },
-  {
-    "id": 958,
-    "username": "anonyme",
-    "url": "https://zestedesavoir.com/membres/voir/anonyme/",
-    "lat": "4.0537386",
-    "lon": "9.6644365792336"
-  },
-  {
-    "id": 958,
-    "username": "anonyme",
-    "url": "https://zestedesavoir.com/membres/voir/anonyme/",
-    "lat": "48.8414302",
-    "lon": "2.2961649330194"
-  },
-  {
-    "id": 958,
-    "username": "anonyme",
-    "url": "https://zestedesavoir.com/membres/voir/anonyme/",
-    "lat": "44.841225",
-    "lon": "-0.5800364"
-  },
-  {
-    "id": 958,
-    "username": "anonyme",
-    "url": "https://zestedesavoir.com/membres/voir/anonyme/",
-    "lat": "30.2711286",
-    "lon": "-97.7436995"
   },
   {
     "id": 978,
@@ -619,13 +563,6 @@
     "id": 2987,
     "username": "Skodt",
     "url": "https://zestedesavoir.com/membres/voir/Skodt/",
-    "lat": "48.8566101",
-    "lon": "2.3514992"
-  },
-  {
-    "id": 2987,
-    "username": "Skodt",
-    "url": "https://zestedesavoir.com/membres/voir/Skodt/",
     "lat": "48.8422951",
     "lon": "2.3442717"
   },
@@ -808,8 +745,8 @@
     "id": 6679,
     "username": "Krowten",
     "url": "https://zestedesavoir.com/membres/voir/Krowten/",
-    "lat": "55.7507178",
-    "lon": "37.6176606"
+    "lat": "55.4792046",
+    "lon": "37.3273304"
   },
   {
     "id": 6744,
@@ -847,55 +784,6 @@
     "lon": "2.2849324"
   },
   {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7831,
-    "username": "Alix_Speroza",
-    "url": "https://zestedesavoir.com/membres/voir/Alix_Speroza/",
-    "lat": "49.1419322",
-    "lon": "2.2849324"
-  },
-  {
-    "id": 7947,
-    "username": "amael",
-    "url": "https://zestedesavoir.com/membres/voir/amael/",
-    "lat": "48.451729",
-    "lon": "-4.465365"
-  },
-  {
     "id": 7947,
     "username": "amael",
     "url": "https://zestedesavoir.com/membres/voir/amael/",
@@ -931,39 +819,11 @@
     "lon": "7.6817943"
   },
   {
-    "id": 8441,
-    "username": "Golden Panda",
-    "url": "https://zestedesavoir.com/membres/voir/Golden%20Panda/",
-    "lat": "48.5559512",
-    "lon": "7.6817943"
-  },
-  {
     "id": 8592,
     "username": "Linux",
     "url": "https://zestedesavoir.com/membres/voir/Linux/",
     "lat": "43.7009358",
     "lon": "7.2683912"
-  },
-  {
-    "id": 8710,
-    "username": "cast1163",
-    "url": "https://zestedesavoir.com/membres/voir/cast1163/",
-    "lat": "45.7774551",
-    "lon": "3.0819427"
-  },
-  {
-    "id": 8710,
-    "username": "cast1163",
-    "url": "https://zestedesavoir.com/membres/voir/cast1163/",
-    "lat": "45.7774551",
-    "lon": "3.0819427"
-  },
-  {
-    "id": 8710,
-    "username": "cast1163",
-    "url": "https://zestedesavoir.com/membres/voir/cast1163/",
-    "lat": "45.7774551",
-    "lon": "3.0819427"
   },
   {
     "id": 8710,
@@ -1006,13 +866,6 @@
     "url": "https://zestedesavoir.com/membres/voir/JP/",
     "lat": "45.4972159",
     "lon": "-73.6103642"
-  },
-  {
-    "id": 11440,
-    "username": "Astro_raf",
-    "url": "https://zestedesavoir.com/membres/voir/Astro_raf/",
-    "lat": "47.2186371",
-    "lon": "-1.5541362"
   },
   {
     "id": 11440,
