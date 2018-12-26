@@ -2,6 +2,7 @@ import time
 import datetime
 from datetime import timedelta, datetime, MINYEAR
 
+
 class TimeInterval:
     def __init__(self, interval):
         if not isinstance(interval, timedelta):

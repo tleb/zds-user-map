@@ -23,7 +23,8 @@ class ZesteDeSavoir:
         return self._request(self.URI_USER.format(user_id))
 
     def send_message(self, topic_id, msg):
-        res = self._request(self.URI_SEND.format(topic_id), 'POST', {'text': msg}, False, False)
+        res = self._request(self.URI_SEND.format(topic_id),
+                            'POST', {'text': msg}, False, False)
 
         # if it's a 403, it's most likely that it's because we can't write in
         # the topic because we are alone
@@ -33,7 +34,8 @@ class ZesteDeSavoir:
         return res.json()
 
     def topics(self, unread, page=1):
-        res = self._request((self.URI_UNREAD_TOPICS if unread else self.URI_TOPICS).format(page))
+        uri = self.URI_UNREAD_TOPICS if unread else self.URI_TOPICS
+        res = self._request(uri.format(page))
 
         yield from res['results']
 
@@ -71,7 +73,8 @@ class ZesteDeSavoir:
 
     def _refresh_tokens(self):
         if self._refresh_token is None:
-            raise RuntimeError('missing refresh token, please use mode 0 to initialise it')
+            raise RuntimeError(
+                'missing refresh token, please use mode 0 to initialise it')
 
         self.time_interval.start()
         print('POST {}'.format(self.URI_TOKEN))

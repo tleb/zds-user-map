@@ -29,18 +29,18 @@ def get_pos(query):
 
 
 def last_text_position(msgs, bot_id, deletion_msg):
-        last_position = None
+    last_position = None
 
-        for msg in msgs:
-            if msg['author'] == bot_id:
-                continue
+    for msg in msgs:
+        if msg['author'] == bot_id:
+            continue
 
-            if msg['text'] == deletion_msg:
-                last_position = None
+        if msg['text'] == deletion_msg:
+            last_position = None
 
-            last_position = msg['text']
+        last_position = msg['text']
 
-        return last_position
+    return last_position
 
 
 def marker_from_topic(topic, zds, config, osm_ti):

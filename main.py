@@ -43,7 +43,7 @@ def main(mode):
         topics.reverse()
 
         markers = [utils.marker_from_topic(topic, zds, config, osm_ti)
-                    for topic in topics]
+                   for topic in topics]
 
         # ignore None and only keep the latest marker for each id
         markers = {m['id']: m for m in markers if m is not None}
@@ -62,7 +62,8 @@ def main(mode):
             for topic in topics:
                 msg = list(zds.messages(topic['id']))[-1]
 
-                change, msg = utils.on_new_message(msg, config, markers, zds, osm_ti)
+                change, msg = utils.on_new_message(
+                    msg, config, markers, zds, osm_ti)
 
                 if change:
                     has_changed = True
@@ -77,6 +78,6 @@ def main(mode):
             time.sleep(config['interval'])
 
 
-
 if __name__ == '__main__':
-    main(int(sys.argv[1]) if 1 < len(sys.argv) and sys.argv[1].isdigit() else -1)
+    main(int(sys.argv[1]) if 1 < len(sys.argv)
+         and sys.argv[1].isdigit() else -1)
