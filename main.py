@@ -24,7 +24,7 @@ def main(mode):
 2: daemon mode (watch new topics)''')
 
     with open(CONFIG_PATH, encoding='UTF-8') as f:
-        config = yaml.load(f)
+        config = yaml.safe_load(f)
 
     zds = ZesteDeSavoir(
         config['client_id'],

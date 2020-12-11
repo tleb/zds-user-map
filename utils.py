@@ -19,8 +19,9 @@ def new_marker(id, username, url, lat, lon):
 
 
 def get_pos(query):
-    res = requests.get(
-        OSM_SEARCH.format(urllib.parse.quote(query)))
+    url = OSM_SEARCH.format(urllib.parse.quote(query))
+    print("GET " + url.split('?')[0])
+    res = requests.get(url)
     if res.status_code != 200:
         return None
 
