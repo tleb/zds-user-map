@@ -26,3 +26,5 @@ $ pip install -r requirements.txt
 The project will require a config file named `config.yml`. A good starting point for one is `config.default.yml`. `client_id` and `client_secret` need to be set correctly.
 
 The next step is to acquire a refresh token from the ZdS API. The bot needs an access token to communicate with the API. There are two ways to obtain one: using the username & password combo or using the refresh token. The first refresh token needs to be acquired using the username & password. This is done through the `python main.py 0` command. Once this is done, the bot is ready to run. `python main.py 1` scans every received messages and creates the output file from those (but does not answer) and `python main.py 2` is the command that monitors unread messages and answers to those.
+
+An example `zds-user-map.service` is available to rely on systemd for automatic startup, log handling, etc.

@@ -1,0 +1,13 @@
+[Unit] 
+Description=zds-user-map 
+After=network.target 
+ 
+[Service] 
+Type=simple 
+User=pi 
+WorkingDirectory=/path/to/zds-user-map 
+ExecStart=/path/to/zds-user-map/venv/bin/python main.py 2
+Restart=on-abort 
+
+[Install]
+WantedBy=multi-user.target
