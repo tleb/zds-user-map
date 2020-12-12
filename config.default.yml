@@ -2,10 +2,7 @@ client_id: foo
 client_secret: bar
 
 # the ZdS's bot ID to ignore its messages
-bot_id: 42
-
-# if true, the program runs only once and pulls every topic (even read ones)
-init: false
+bot_id: 8574
 
 interval: 60
 
