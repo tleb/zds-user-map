@@ -84,6 +84,13 @@
     "lon": "3.2153907"
   },
   {
+    "id": 267,
+    "username": "viki53",
+    "url": "https://zestedesavoir.com/membres/voir/viki53/",
+    "lat": "48.1113387",
+    "lon": "-1.6800198"
+  },
+  {
     "id": 273,
     "username": "Situphen",
     "url": "https://zestedesavoir.com/membres/voir/Situphen/",
@@ -397,6 +404,13 @@
     "url": "https://zestedesavoir.com/membres/voir/Berdes/",
     "lat": "47.3744489",
     "lon": "8.5410422"
+  },
+  {
+    "id": 1043,
+    "username": "Mohack",
+    "url": "https://zestedesavoir.com/membres/voir/Mohack/",
+    "lat": "11.85677545",
+    "lon": "42.757784519943655"
   },
   {
     "id": 1081,
@@ -908,5 +922,12 @@
     "url": "https://zestedesavoir.com/membres/voir/Kwonsongji/",
     "lat": "48.980925",
     "lon": "2.0030818"
+  },
+  {
+    "id": 17553,
+    "username": "valerian.roura",
+    "url": "https://zestedesavoir.com/membres/voir/valerian.roura/",
+    "lat": "48.1978559",
+    "lon": "3.282606"
   }
 ]
