@@ -25,14 +25,17 @@
 
 <script type="text/javascript">
 
-const map = L.map('map', {
-    center:  [35.317, -0.527],
-    zoom:    3,
-})
+let map;
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map)
+window.addEventListener('DOMContentLoaded', () => {
+    map = L.map('map', {center:  [35.317, -0.527], zoom: 3})
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map)
+
+    getMarkersData(onMarkersData)
+})
 
 function userMarker(m) {
     return L.marker([m.lat, m.lon], {
@@ -43,14 +46,12 @@ function userMarker(m) {
 
 function getMarkersData(cb) {
     const httpReq = new XMLHttpRequest()
-    httpReq.addEventListener('load', function() {
-        cb(JSON.parse(this.responseText))
-    })
+    httpReq.addEventListener('load', () => cb(JSON.parse(httpReq.responseText)))
     httpReq.open('GET', 'markers.json', true)
     httpReq.send()
 }
 
-getMarkersData(function(markers) {
+function onMarkersData(markers) {
     const cluster = L.markerClusterGroup()
     cluster.addLayers(markers.map(userMarker))
     map.addLayer(cluster)
@@ -81,10 +82,8 @@ getMarkersData(function(markers) {
     observer.observe(controlSearch._tooltip, { childList: true })
 
     // if the user searches something, we should disable the auto-enter
-    document.querySelector('input').addEventListener('change', () => {
-        observer.disconnect()
-    })
-})
+    document.querySelector('input').addEventListener('change', () => observer.disconnect())
+}
 </script>
 
 </body>
