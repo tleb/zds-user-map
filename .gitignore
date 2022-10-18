@@ -4,3 +4,4 @@ store.json
 config.yml
 logbot.log
 refresh_token.txt
+/node_modules/

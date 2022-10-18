@@ -1,0 +1,28 @@
+{
+  "name": "zds-user-map",
+  "version": "1.0.0",
+  "description": "A map for [Zeste de Savoir](https://zestedesavoir.com/)'s users! See [the related topic](https://zestedesavoir.com/forums/sujet/9260/une-carte-des-membres-de-zeste-de-savoir/) for more information (in french).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tleb/zds-user-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tleb/zds-user-map/issues"
+  },
+  "homepage": "https://github.com/tleb/zds-user-map#readme",
+  "dependencies": {
+    "esbuild": "^0.15.11",
+    "leaflet": "^1.9.2",
+    "leaflet-search": "^3.0.3",
+    "leaflet.markercluster": "^1.5.3"
+  }
+}
