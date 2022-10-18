@@ -46,7 +46,7 @@ function getMarkersData(cb) {
     httpReq.addEventListener('load', function() {
         cb(JSON.parse(this.responseText))
     })
-    httpReq.open('GET', 'https://tleb.github.io/zds-user-map/markers.json', true)
+    httpReq.open('GET', 'markers.json', true)
     httpReq.send()
 }
 
