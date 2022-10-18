@@ -17,21 +17,20 @@
 
     <div id="map"></div>
 
-    <script src="leaflet-and-co.js"></script>
+    <script async src="leaflet-and-co.js"></script>
 
-<script type="text/javascript">
+<script async type="text/javascript">
 
-let map;
-
-window.addEventListener('DOMContentLoaded', () => {
-    map = L.map('map', {center:  [35.317, -0.527], zoom: 3})
-
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map)
-
-    getMarkersData(onMarkersData)
+// Start JSON HTTP request ASAP.
+let markers = null;
+getMarkersData((data) => {
+    markers = data
+    if (document.readyState == "complete")
+        onLoad();
 })
+
+// Wait for load event to make sure the JS dependency has loaded.
+window.addEventListener('load', onLoad)
 
 function userMarker(m) {
     return L.marker([m.lat, m.lon], {
@@ -47,7 +46,17 @@ function getMarkersData(cb) {
     httpReq.send()
 }
 
-function onMarkersData(markers) {
+function onLoad() {
+    // If the load event triggered but markers aren't ready, we'll get called by
+    // the markers callback.
+    if (markers === null) return;
+
+    const map = L.map('map', {center:  [35.317, -0.527], zoom: 3})
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map)
+
     const cluster = L.markerClusterGroup()
     cluster.addLayers(markers.map(userMarker))
     map.addLayer(cluster)
