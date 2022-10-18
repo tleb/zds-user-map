@@ -10,7 +10,8 @@ clean:
 docs/leaflet-and-co.css: node_modules/leaflet/dist/leaflet.css \
 		node_modules/leaflet.markercluster/dist/MarkerCluster.css \
 		node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css \
-		node_modules/leaflet-search/dist/leaflet-search.min.css
+		node_modules/leaflet-search/dist/leaflet-search.min.css \
+		node_modules/leaflet-search/dist/leaflet-search.mobile.min.css
 	for f in $^; do (cat $$f; echo); done \
 	| $(ESBUILD_PATH) --loader=css --minify \
 	| cat <(cat leaflet-prefix.txt) - \
