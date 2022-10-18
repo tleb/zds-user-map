@@ -25,5 +25,6 @@ docs/leaflet-and-co.js: node_modules/leaflet/dist/leaflet.js \
 	| cat <(cat leaflet-prefix.txt) - \
 	> $@
 
-docs/images: node_modules/leaflet/dist/images
+docs/images: $(wildcard node_modules/leaflet/dist/images/* node_modules/leaflet-search/images/*)
+	mkdir $@
 	cp -r $^ $@
